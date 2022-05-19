@@ -4,6 +4,7 @@ import com.kz.narxoz.FinalProject.Entity.Book;
 import com.kz.narxoz.FinalProject.Repository.BookRepository;
 import com.kz.narxoz.FinalProject.Service.BookServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class BookServiceImplementation implements BookServiceInterface {
 
     @Override
     public List<Book> FindAllBooks() {
-        return bookRepository.findAll();
+        return bookRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
     @Override

@@ -133,7 +133,7 @@ public class MainController {
 
         }
 
-        return "redirect:?register?error";
+        return "redirect:/register?error";
     }
 
     private Users getUserData(){
